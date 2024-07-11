@@ -4,15 +4,13 @@
 
 from fabric .api import *
 from datetime import datetime
-import os.path
+
 
 def do_pack():
 
-    local('sudo mkdir -p versions')
-
-    t = datetime.now()
+    time = datetime.now()
     archive = 'web_static_' + time.strftime("%Y%m%d%H%M%S") + '.' + 'tgz'
-
+    local('sudo mkdir -p versions')
    # t_str = t.strftime('%Y%m%d%H%M%S')
 
    # local(f'tar -cvzf versions/web_static_{t_{str}.tgz web_static')
